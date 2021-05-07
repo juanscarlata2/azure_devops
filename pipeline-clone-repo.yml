@@ -35,6 +35,7 @@ jobs:
 
 - job: "Clone_repo"
   displayName: "Clone_repo"
+
   steps:
     - bash: git clone 'https://github.com/agustinjaume/azure_devops.git'
     - script: echo building $(Build.BuildNumber)
@@ -42,3 +43,7 @@ jobs:
     - bash: cat README.md
     - bash: pwd
     - bash: ls -l
+    - task: PythonScript@0
+      inputs:
+        scriptSource: 'inline'
+        script: 'python --version'
