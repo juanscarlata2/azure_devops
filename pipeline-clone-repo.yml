@@ -52,5 +52,5 @@ jobs:
         scriptSource: 'inline'
         script: 'print ("##vso[task.setvariable variable=one]secondValue"+str(1+2))'
         
-    - script: echo $(variables.one)    
+    - script: echo ${{ variables.one }}    
 
