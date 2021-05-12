@@ -35,6 +35,9 @@ jobs:
 
 - job: "Clone_repo"
   displayName: "Clone_repo"
+  variables:
+    - name: project_name
+      value: Primero
 
   steps:
     - bash: git clone 'https://github.com/agustinjaume/azure_devops.git'
@@ -46,4 +49,8 @@ jobs:
     - task: PythonScript@0
       inputs:
         scriptSource: 'inline'
-        script: 'print ("Hello world")'
+        script: 'print ("##vso[task.setvariable variable=project_name]Segundo valor")'
+        
+    - script: |
+      echo $(project_name)
+      displayName: Second variable pass
