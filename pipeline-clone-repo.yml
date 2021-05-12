@@ -50,7 +50,7 @@ jobs:
     - task: PythonScript@0
       inputs:
         scriptSource: 'inline'
-        script: "print('##vso[task.setvariable one=full-version;]%s' % (fullVersion+str(1+2)))"
+        script: 'print("##vso[task.setvariable one=full-version;]%s" % (fullVersion+str(1+2)))'
         
     - script: echo ${{ variables.one }}    
 
