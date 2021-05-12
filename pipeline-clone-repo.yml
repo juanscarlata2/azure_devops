@@ -49,5 +49,6 @@ jobs:
         script: 'print("Hola Python")'
       
     - script: python cliente.py
-    - script: echo ${{ variables.one }}    
+
+    - script: echo $(one)    
 
