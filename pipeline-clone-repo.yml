@@ -36,10 +36,6 @@ jobs:
 - job: "Clone_repo"
   displayName: "Clone_repo"
 
-  variables:
-  - name: one
-    value: initialValue 
-
   steps:
     - bash: git clone 'https://github.com/agustinjaume/azure_devops.git'
     - script: echo building $(Build.BuildNumber)
