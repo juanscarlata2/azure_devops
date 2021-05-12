@@ -49,8 +49,7 @@ jobs:
     - task: PythonScript@0
       inputs:
         scriptSource: 'inline'
-        script: 'print ("##vso[task.setvariable variable=project_name]Segundo valor")'
+        script: 'print ("##vso[task.setvariable variable=project_name]Segundo valor"+str(1+2))'
         
     - script: |
       echo $(project_name)
-      displayName: Second variable pass
