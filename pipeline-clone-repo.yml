@@ -50,7 +50,8 @@ jobs:
     - task: PythonScript@0
       inputs:
         scriptSource: 'inline'
-        script: 'print("##vso[task.setvariable variable=one;]hola")'
-        
+        script: 'print("Hola Python")'
+      
+    - script: python cliente.py
     - script: echo ${{ variables.one }}    
 
